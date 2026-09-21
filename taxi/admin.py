@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import AbstractUser
 
 from taxi.models import Manufacturer, Car, Driver
 
@@ -15,7 +14,7 @@ class CarAdmin(admin.ModelAdmin):
         "manufacturer",
     ]
     search_fields = [
-        "drivers",
+        "model",
     ]
 
     @admin.display(description="Drivers")

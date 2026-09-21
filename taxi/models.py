@@ -12,7 +12,7 @@ class Manufacturer(models.Model):
 class Car(models.Model):
     model = models.CharField(max_length=255)
     manufacturer = models.ForeignKey(
-        Manufacturer, on_delete=models.CASCADE, related_name="cars"
+        Manufacturer, on_delete=models.CASCADE
     )
     drivers = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="cars"
@@ -23,5 +23,5 @@ class Driver(AbstractUser):
     license_number = models.CharField(unique=True, max_length=255)
 
     class Meta:
-        verbose_name = "Driver"
-        verbose_name_plural = "Drivers"
+        verbose_name = "driver"
+        verbose_name_plural = "drivers"
